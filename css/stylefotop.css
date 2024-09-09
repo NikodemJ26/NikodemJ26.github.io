@@ -23,13 +23,13 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center; 
     justify-content: space-between; 
     padding-top: 10px; 
 }
 
 .column {
-    flex: 1; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,12 +44,20 @@ body {
     background: #2C2C2E; 
     height: auto; 
     box-shadow: 0px 9px 14px 10px rgba(0, 0, 0, 0.5);
-    padding: 10px 20px;
+    padding: 10px 10px 10px 40px;
     display: flex;
     flex-direction: column;
     align-items: center; /* Wyśrodkowanie zdjęć w poziomie */
     justify-content: center; /* Wyśrodkowanie zdjęć w pionie */
 }
+.column.middle img {
+    max-width: 100%; /* Constrain images to the frame's width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+    object-fit: cover;
+    display: block; /* Ensures no inline space below images */
+}
+
 
 .column.right {
     width: 15%;
@@ -191,19 +199,25 @@ footer {
     }
 }
 
+
 .frame {
-    padding: 20px;
-    margin: 20px;
+    padding: 20px; /* Adjust padding for more spacing inside the frame */
+    margin: 15px; /* Increase margin to create more space between frames */
     background: #1a1a1b;
-    width: 100%;
-    max-width: 450px;
+    width: 85%; /* Slightly decrease the width to make frames smaller */
     box-shadow: 8px 8px 24px 0px rgb(35, 36, 41);
+    box-sizing: border-box;
+    display: flex; /* Add flexbox for centering */
+    justify-content: center; /* Center images horizontally */
+    align-items: center; /* Center images vertically */
 }
 
 img {
-    width: 100%;
+    max-width: 100%; /* Keep images constrained to frame width */
     height: auto;
     border-radius: 8px;
+    display: block; /* Ensures no inline space below images */
+    margin-bottom: 15px; /* Increase margin between images if there are multiple */
 }
 
 .lightbox {
@@ -246,11 +260,6 @@ img {
         width: 90%;
     }
 
-    .frame {
-        width: 100%;
-        padding: 10px;
-        margin: 10px;
-    }
 
     .button-85, .button-27 {
         padding: 0.6em 1em;
@@ -306,3 +315,13 @@ img {
         transform: rotate(360deg);
     }
 }
+
+
+@media (max-width: 768px) {
+    th, td {
+        padding: 8px; /* Reduce padding for smaller screens */
+        font-size: 14px; /* Smaller font size for smaller screens */
+    }
+}
+
+
