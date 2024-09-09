@@ -201,9 +201,13 @@ footer {
 }
 
 img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+    img {
+        width: 100%;
+        height: auto;
+        max-width: 100%; 
+        border-radius: 8px;
+        object-fit: cover; 
+    }
 }
 
 .lightbox {
@@ -227,7 +231,7 @@ img {
 }
 
 .lightbox-content img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 8px;
 }
